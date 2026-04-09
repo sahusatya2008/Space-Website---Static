@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A cinematic universe-themed parallax website with smooth scroll physics, procedural stars, and immersive futuristic motion design."
+    />
+    <title>Enter the Cosmos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#hero">Skip to content</a>
+
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <canvas id="dustfield" aria-hidden="true"></canvas>
+    <div class="mouse-glow" aria-hidden="true"></div>
+    <div class="scan-noise" aria-hidden="true"></div>
+
+    <div class="parallax-scene" aria-hidden="true">
+      <div class="parallax-layer layer-void" data-layer-depth="0.03" data-layer-z="-520"></div>
+      <div class="parallax-layer layer-grid" data-layer-depth="0.06" data-layer-z="-360"></div>
+      <div class="parallax-layer layer-nebula-a" data-layer-depth="0.11" data-layer-z="-260"></div>
+      <div class="parallax-layer layer-nebula-b" data-layer-depth="0.16" data-layer-z="-150"></div>
+      <div class="parallax-layer layer-plasma" data-layer-depth="0.22" data-layer-z="-90"></div>
+      <div class="parallax-layer layer-fog-low" data-layer-depth="0.28" data-layer-z="-30"></div>
+      <div class="parallax-layer layer-fog-high" data-layer-depth="0.36" data-layer-z="18"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="brand-block">
+        <span class="brand-mark"></span>
+        <div>
+          <p class="brand-name">COSMIC VECTOR</p>
+          <p class="brand-caption">Immersive Deep Space Journey</p>
+          <p class="brand-developer">Developed by Satya Narayan Sahu, SNSX</p>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#hero">Portal</a>
+        <a href="#travel">Transit</a>
+        <a href="#system">Worlds</a>
+        <a href="#singularity">Singularity</a>
+        <a href="#tech">Systems</a>
+        <a href="#warp">Warp Exit</a>
+      </nav>
+    </header>
+
+    <main id="smooth-wrapper">
+      <div id="smooth-content">
+        <section class="panel hero-panel is-active" id="hero" data-section="hero">
+          <div class="section-shell hero-shell">
+            <div class="hero-grid">
+              <div class="hero-copy parallax-node" data-depth="0.18" data-tilt>
+                <p class="section-kicker">Deep Space Interface / 01</p>
+                <h1>ENTER THE COSMOS</h1>
+                <p class="hero-text">
+                  Slide through a cinematic corridor of stars, gravitational storms,
+                  and luminous worlds built to feel less like a website and more like
+                  a live celestial transmission.
+                </p>
+                <div class="hero-actions">
+                  <a class="button-primary" href="#travel">Ignite Descent</a>
+                  <a class="button-secondary" href="#tech">View Future Systems</a>
+                </div>
+                <div class="hero-signal-band" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <ul class="hero-metrics" aria-label="Mission telemetry">
+                  <li>
+                    <span class="metric-value">6</span>
+                    <span class="metric-label">Parallax Layers</span>
+                  </li>
+                  <li>
+                    <span class="metric-value">∞</span>
+                    <span class="metric-label">Stellar Drift</span>
+                  </li>
+                  <li>
+                    <span class="metric-value">0.08</span>
+                    <span class="metric-label">Lerp Response</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="hero-visual parallax-node" data-depth="0.1" data-tilt>
+                <div class="hero-core">
+                  <div class="signal-ring signal-ring-a"></div>
+                  <div class="signal-ring signal-ring-b"></div>
+                  <div class="signal-ring signal-ring-c"></div>
+                  <div class="constellation-web" aria-hidden="true">
+                    <span class="web-line web-line-a"></span>
+                    <span class="web-line web-line-b"></span>
+                    <span class="web-line web-line-c"></span>
+                  </div>
+                  <div
+                    class="float-planet planet-a parallax-node"
+                    data-depth="0.26"
+                    data-dof
+                  >
+                    <div class="planet-surface"></div>
+                    <span class="planet-ring"></span>
+                  </div>
+                  <div
+                    class="float-planet planet-b parallax-node"
+                    data-depth="0.34"
+                    data-dof
+                  >
+                    <div class="planet-surface"></div>
+                  </div>
+                  <div
+                    class="float-planet planet-c parallax-node"
+                    data-depth="0.21"
+                    data-dof
+                  >
+                    <div class="planet-surface"></div>
+                    <span class="planet-ring"></span>
+                  </div>
+                  <div class="portal-lens"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="scroll-cue">
+              <span>Scroll to breach the atmosphere</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel travel-panel" id="travel" data-section="travel">
+          <div class="section-shell travel-shell">
+            <div class="travel-copy">
+              <p class="section-kicker">Galaxy Travel / 02</p>
+              <h2>Velocity Through a Living Nebula</h2>
+              <p>
+                Every meter forward reshapes the sky. Color-shifting clouds, dust
+                wakes, and kinetic star trails bend around the viewport to create a
+                tangible sensation of acceleration.
+              </p>
+            </div>
+
+            <div class="nebula-ribbons" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="travel-window parallax-node" data-depth="0.12" data-tilt data-dof>
+              <div class="travel-window__frame">
+                <div class="window-hud">
+                  <span>Warp corridor synchronized</span>
+                  <span>Local tide stable</span>
+                </div>
+                <div class="flight-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="window-readout">
+                  <div>
+                    <strong>03.88 AU</strong>
+                    <span>Forward drift</span>
+                  </div>
+                  <div>
+                    <strong>92%</strong>
+                    <span>Nebula density</span>
+                  </div>
+                  <div>
+                    <strong>1.7x</strong>
+                    <span>Photon wash</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="shooting-stars" id="shooting-stars" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <section class="panel system-panel" id="system" data-section="system">
+          <div class="section-shell system-shell">
+            <div class="system-copy">
+              <p class="section-kicker">Planet System / 03</p>
+              <h2>Orbiting Bodies, Layered Depth, Living Light</h2>
+              <p>
+                The system unfolds with a physically inspired rhythm: atmospheric
+                glow, orbital drift, and scroll-sensitive scaling that brings each
+                world into focus as you pass its lane.
+              </p>
+            </div>
+
+            <div class="planetarium parallax-node" data-depth="0.14" data-tilt>
+              <div class="planetary-halo" aria-hidden="true"></div>
+              <div class="solar-core" data-dof></div>
+
+              <div class="orbit orbit-a">
+                <div class="orbital-body world-a" data-dof></div>
+              </div>
+              <div class="orbit orbit-b">
+                <div class="orbital-body world-b" data-dof></div>
+              </div>
+              <div class="orbit orbit-c">
+                <div class="orbital-body world-c" data-dof></div>
+              </div>
+              <div class="orbit orbit-d">
+                <div class="orbital-body world-d" data-dof></div>
+              </div>
+            </div>
+
+            <div class="planet-insights">
+              <article class="planet-card parallax-node" data-depth="0.19" data-tilt data-dof>
+                <span class="planet-card__index">A-01</span>
+                <h3>Aurelia</h3>
+                <p>
+                  High-albedo oceans, molten auroras, and a ring halo reflecting
+                  ultraviolet tides.
+                </p>
+              </article>
+
+              <article class="planet-card parallax-node" data-depth="0.25" data-tilt data-dof>
+                <span class="planet-card__index">B-14</span>
+                <h3>Nyxar</h3>
+                <p>
+                  A shadow sphere wrapped in red ion storms and magnetic flashes at
+                  the terminator line.
+                </p>
+              </article>
+
+              <article class="planet-card parallax-node" data-depth="0.2" data-tilt data-dof>
+                <span class="planet-card__index">C-33</span>
+                <h3>Vanta Prime</h3>
+                <p>
+                  Carbon plains, frosted poles, and a luminous exosphere stretching
+                  far beyond the visible limb.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel singularity-panel" id="singularity" data-section="singularity">
+          <div class="section-shell singularity-shell">
+            <div class="singularity-copy">
+              <p class="section-kicker">Black Hole Zone / 04</p>
+              <h2>Cross the Event Horizon</h2>
+              <p>
+                The field tightens, time appears to drag, and light arcs into a
+                violent ring. This section eases the scroll pace visually to create
+                a heavy gravitational pause at the center.
+              </p>
+            </div>
+
+            <div class="singularity-stage parallax-node" data-depth="0.08" data-tilt data-dof>
+              <div class="lensing-grid"></div>
+              <div class="matter-stream matter-stream-a"></div>
+              <div class="matter-stream matter-stream-b"></div>
+              <div class="accretion-disc"></div>
+              <div class="event-horizon"></div>
+              <div class="photon-ring"></div>
+              <div class="gravitational-wave wave-a"></div>
+              <div class="gravitational-wave wave-b"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel tech-panel" id="tech" data-section="tech">
+          <div class="section-shell tech-shell">
+            <div class="tech-copy">
+              <p class="section-kicker">Future Space Tech / 05</p>
+              <h2>Futuristic Systems in a Glass Orbit</h2>
+              <p>
+                Floating interface modules use layered translucency, neon edge light,
+                and holographic scans to suggest technology engineered far beyond the
+                current horizon.
+              </p>
+            </div>
+
+            <div class="tech-beacons" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="tech-grid">
+              <article class="tech-card parallax-node" data-depth="0.18" data-tilt data-dof>
+                <span class="tech-card__icon">01</span>
+                <h3>Gravity Navigation</h3>
+                <p>
+                  Predictive routing around dark-matter shear and unstable stellar
+                  currents.
+                </p>
+              </article>
+
+              <article class="tech-card parallax-node" data-depth="0.24" data-tilt data-dof>
+                <span class="tech-card__icon">02</span>
+                <h3>Quantum Hull Skin</h3>
+                <p>
+                  Adaptive shielding that reflects energy bloom and rebalances heat
+                  signatures instantly.
+                </p>
+              </article>
+
+              <article class="tech-card parallax-node" data-depth="0.2" data-tilt data-dof>
+                <span class="tech-card__icon">03</span>
+                <h3>Holographic Crew Link</h3>
+                <p>
+                  Multi-spectrum communications presented as volumetric responsive
+                  interfaces.
+                </p>
+              </article>
+
+              <article class="tech-card parallax-node" data-depth="0.28" data-tilt data-dof>
+                <span class="tech-card__icon">04</span>
+                <h3>Atmospheric Forge</h3>
+                <p>
+                  Engineered biospheres tuned in real time for pressure, oxygen, and
+                  thermal comfort.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel warp-panel" id="warp" data-section="warp">
+          <div class="section-shell warp-shell">
+            <div class="warp-copy parallax-node" data-depth="0.13" data-tilt>
+              <p class="section-kicker">Warp Exit / 06</p>
+              <h2>Beyond the Mapped Sky</h2>
+              <p>
+                The stars elongate, the viewport blooms, and the final vector opens
+                into a new frontier. You do not leave the journey. You launch the
+                next one.
+              </p>
+              <p class="warp-credit">Developed by Satya Narayan Sahu, SNSX</p>
+              <a class="button-primary" href="#hero">Re-enter the Portal</a>
+            </div>
+            <div class="warp-rings" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="warp-lights" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="scroll-spacer" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
